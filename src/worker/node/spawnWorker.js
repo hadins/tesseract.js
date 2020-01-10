@@ -1,7 +1,4 @@
 const { fork } = require('child_process');
-
-let debugPort = 9229;
-
 /**
  * spawnWorker
  *
@@ -10,6 +7,5 @@ let debugPort = 9229;
  * @access public
  */
 module.exports = ({ workerPath }) => {
-  debugPort += 1;
-  return fork(workerPath, { execArgv: [`--debug-port=${debugPort}`] });
+  return fork(workerPath);
 };
